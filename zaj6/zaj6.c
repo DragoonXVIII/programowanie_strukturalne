@@ -8,14 +8,15 @@
 
 void srednia_while()
 {
-    float srednia;
+    float srednia=0.0;
 
-    int n,pom;
+    int n,pom,pom2;
 
     printf("podaj n:");
     scanf("%d",&n);
 
     pom = n;
+    pom2 = n;
 
     while(pom!=0)
     {
@@ -26,7 +27,7 @@ void srednia_while()
         pom--;
     }
 
-    srednia/=n;
+    srednia/=pom2;
     printf("%f",srednia);
 
     return;
@@ -34,14 +35,15 @@ void srednia_while()
 
 void srednia_do_while()
 {
-    float srednia;
+    float srednia=0.0;
 
-    int n,pom;
+    int n,pom,pom2;
     printf("podaj n:\n");
     printf("uwaga, nie wprowadzaj 0");
     scanf("%d",&n);
 
     pom = n;
+    pom2 = n;
 
     do
     {
@@ -52,7 +54,7 @@ void srednia_do_while()
         pom--;
     }while(pom!=0);
 
-    srednia/=n;
+    srednia/=pom2;
     printf("%f",srednia);
 
     return;
@@ -157,11 +159,11 @@ int main()
 {
 
     setlocale(LC_ALL,"");
-    /*
+
     srednia_while();
     //???? dziwnie dziala jakby zaporzyalo wartosc z innych zmiennych
     srednia_do_while();
-    */
+
     /*
     srednia_parz_nieparz();
     */
