@@ -61,14 +61,52 @@ bool iloczyn_1_100(int *a)
 void dekompozycja()
 {
     float a,c;
-    int b = a;
     printf("Podaj liczbe: ");
     scanf("%f",&a);
+    int b = (int)a;
     c = a - b;
 
     printf(" int: %d float: %f",b,c);
     return;
 }
+
+void ile_0_ile_dod()
+{
+
+    int licz0 = 0, licz_dod = 0,strc;
+    float liczba;
+    char liczba_s[16], cpom[] = "ok";
+    bool pom = true;
+
+    printf("podawaj liczby, zakoñcz wpisaniem (ok)");
+
+    while(true)
+    {
+        printf("\n podaj kolejna liczbe: ");
+        scanf(" %s", liczba_s);
+
+            //printf("%s",liczba_s);
+        strc = strcmp(liczba_s, cpom);
+            //printf("%d",strc);
+
+        if(strc == 0)
+        {
+            printf("schluss\n");
+            printf("0: %d, dod: %d",licz0,licz_dod);
+            return;
+        }
+        else
+            liczba = atof(liczba_s);
+        if(liczba == 0.0)
+            licz0++;
+        if(liczba > 0.0)
+            licz_dod++;
+
+    }
+
+    return;
+}
+
 
 
 int main()
@@ -113,8 +151,12 @@ int main()
     if(!iloczyn_1_100(&wynik))
         printf("Brak liczb spelniajacych warunek 1-100. \n");
     */
+    //9.5
+    //dekompozycja();
+    //9.6
+    ile_0_ile_dod();
 
-    dekompozycja();
+
 
     return 0;
 }
