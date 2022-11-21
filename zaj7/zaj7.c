@@ -15,7 +15,18 @@ void lista_plac();
 
 void czy_ciag_2();
 
-float suma_szeregu();
+float suma_szeregu(float kat, int n);
+
+float sumaszer(float kat1, int n1)
+{
+    float xx = 1.0, x = kat1, sin1 = 0.00;
+    for(int n = 1; n<=n1; n++)
+    {
+        xx *= x*x/2*n*((2*n)+1)*(-1);
+        sin1 += xx;
+    }
+    return sin1;
+}
 
 
 
@@ -48,7 +59,19 @@ int main()
 
     //7.5
 
-    czy_ciag_2();
+    //czy_ciag_2();
+
+    float x;
+    int k;
+
+    printf("Podaj ilosc skladnikow sumy: ");
+    scanf("%d",&k);
+
+    printf("\nPodaj kat: ");
+    scanf("%f",&x);
+
+    printf("Wartosc dla podanych argumentow wynosi: %f\n",suma_szeregu(x,k)); //wymaga dopracowania (nie działa najlepiej XD)
+    printf("Wartosc dla podanych argumentow wynosi: %f\n",sumaszer(x,k));
 
     return 0;
 }
@@ -164,10 +187,30 @@ void czy_ciag_2()
     printf("jest XD");
 }
 
-float suma_szeregu()
+float suma_szeregu(float kat, int n)
 {
+    int silnia(int a)
+    {
+        int pom = 1;
+        for(int j = 1; j<=a; j++)
+            {
+                pom*=j;
+            }
+    }
 
+    float wynik = 0.0;
+    int pomm,b;
+
+    for(int i = 0; i <= n; i++)
+    {
+        b = (2*i)+1;
+        pomm = silnia(b);
+        wynik += pow(-1,i)/pomm*(pow(kat,(2*(i+1)) ));
+    }
+
+    return wynik;
 }
+
 
 
 /*void czy_ciag()
