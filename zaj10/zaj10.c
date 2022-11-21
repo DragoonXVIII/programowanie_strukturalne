@@ -53,6 +53,45 @@ int ile_wyst(int tablica[],size_t dlug,int szukana)
     return pom;
 }
 
+void zad10_4()
+{
+
+    int N,M;
+    float suma,srednia;
+
+    printf("Podaj N: ");
+    scanf("%d",&N);
+    printf("Podaj M: ");
+    scanf("%d",&M);
+
+    float tab[N][M];
+
+    for(int i = 0; i<N; i++)
+    {
+        for(int j = 0; j<M; j++)
+        {
+            printf("Podaj liczbe do wpisania w rzedzie: %d, kolumnie %d",i+1,j+1);
+            scanf(" %f",&tab[i][j]);
+            suma += tab[i][j];
+            srednia++;
+        }
+        printf("\n");
+    }
+
+    for(int x = 0; x<N; x++)
+    {
+        for(int y = 0; y<M; y++)
+        {
+            printf("%6.3f, ",tab[x][y]);
+        }
+        printf("\n");
+    }
+    srednia = suma/srednia;
+    printf("Suma to: %f, srednia to: %f.\n",suma,srednia);
+
+    return;
+}
+
 
 
 int main()
@@ -146,7 +185,7 @@ int main()
 
     //10.3
 
-
+    /*
     time_t t;
 
     srand((unsigned) time(&t));
@@ -185,7 +224,9 @@ int main()
     printf("ilosc wystapien elementu z tablicy4 to: %d\n",ile_wyst(tab4,t4,b));
     printf("ilosc wystapien elementu z tablicy5 to: %d\n",ile_wyst(tab5,t5,b));
 
+    */
 
+    zad10_4();
 
     return 0;
 }
