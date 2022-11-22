@@ -53,7 +53,7 @@ int ile_wyst(int tablica[],size_t dlug,int szukana)
     return pom;
 }
 
-void zad10_4()
+void zad10_3()
 {
 
     int N,M;
@@ -71,8 +71,8 @@ void zad10_4()
         for(int j = 0; j<M; j++)
         {
             printf("Podaj liczbe do wpisania w rzedzie: %d, kolumnie %d",i+1,j+1);
-            scanf(" %f",&tab[i][j]);
-            suma += tab[i][j];
+            scanf(" %f",&*(*(tab+i)+j));
+            suma += *(*(tab+i)+j);
             srednia++;
         }
         printf("\n");
@@ -82,7 +82,7 @@ void zad10_4()
     {
         for(int y = 0; y<M; y++)
         {
-            printf("%6.3f, ",tab[x][y]);
+            printf("%6.3f, ",*(*(tab+x)+y)); //*(*(tab+x)+y) tab[x][y])
         }
         printf("\n");
     }
@@ -91,6 +91,97 @@ void zad10_4()
 
     return;
 }
+
+//not used, im done with that shit xD
+void wczytaj(int rows,int columns,int *a)
+{
+    for(int i = 0; i<rows; i++)
+    {
+        for(int j = 0; j<columns; j++)
+        {
+            printf("Podaj wartosc komorki o wspolrzednych %dx%d: \n",i,j);
+            scanf("%d", &a[i*columns+j]);
+        }
+    }
+    return;
+}
+
+void twoja_stara(float *a,int N)//nienawidze tablic wielowymiarowqych w C (dzięki)
+{
+
+    for(int i = 0; i<N; i++)
+    {
+        for(int j = 0; j<N; j++)
+        {
+            printf("\nPodaj element znajdujacy sie w %dx%d komorce: ",i,j);
+            scanf("%f",(a+i*N+j)); //j*N_i ta? działa? a szkoda myślałem że dodatkowe 12 h posiedze jeszcze
+        }
+    }
+
+    return;
+}
+
+ double iloczyn(float *a,int N)
+ {
+    double wynik = 1.0;
+    for(int i = 0; i<N; i++)
+    {
+        for(int j = 0; j<N; j++)
+        {
+            if(j==i)
+                wynik*=*(a+i*N+j);
+        }
+    }
+    return wynik;
+ }
+
+ float suma(float *a, int N)
+ {
+
+    double wynik = 0.0;
+    for(int i = 0; i<N; i++)
+    {
+        for(int j = 0; j<N; j++)
+        {
+            if(j>i)
+                wynik+=*(a+i*N+j);
+        }
+    }
+
+    return wynik;
+
+ }
+
+void kopiuj_1(int tab1[],int tab2[],int N) // mimo że praca na indexach przy passowaniu tablic do zewnętrznych funkcji to tak naprawde to samo co wskazniki i dziala tylko przy jednowymiarowych to dla widza zrobimy
+{
+    for(int i = 0; i<N; i++)
+        {
+        tab2[i] = tab1[i];
+        }
+    return;
+}
+
+void kopiuj_2(int *tab1,int *tab3,int N)
+{
+    for(int i = 0; i<N; i++)
+        {
+        *(tab3+i) = *(tab1+i); //tab2[i] = tab1[i];//*(tab2+i) = *(tab1+i);
+        }
+    return;
+}
+
+bool czy_zdali(int *tab1, int n,int prog)
+{
+    for(int i = 0; i<n; i++)
+    {
+    if(*(tab1+i)>=prog)
+        continue;
+    else
+        return false;
+    }
+}
+
+
 
 
 
@@ -225,8 +316,104 @@ int main()
     printf("ilosc wystapien elementu z tablicy5 to: %d\n",ile_wyst(tab5,t5,b));
 
     */
+    //10.3 cd
+    //zad10_3();
 
-    zad10_4();
+    //10.4
+
+
+    /* //(not used)
+    //size_t = sizeof(tab[])/sizeof(tab[0]); tu nie zadzia³a, nie tedy droga
+    int N;
+    printf("podaj N: ");
+    scanf("%d",&N);
+
+
+    int *arr = malloc(N * N * sizeof(int));
+    for(int i = 0; i < N * N; i++) {
+           arr[i] = i;
+       }
+
+    wczytaj(arr,N,N);
+
+    free(arr);
+    */ //(not used)
+
+
+    //10.4 właściwie
+    /*
+    int N;
+    printf("podaj N: ");
+    scanf("%d",&N);
+
+    float tab[N][N];
+
+    float *arr = tab;
+
+    twoja_stara(arr,N);
+
+
+    for(int i = 0; i<N; i++)
+    {
+        for(int j = 0; j<N; j++)
+        {
+            printf("%3.6f, ",tab[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Iloczyn przekatnej wynosi: %lf\n",iloczyn(arr,N));
+    printf("Suma ponad przekatna wynosi: %lf\n",suma(arr,N));
+    */
+    //10.5
+    /*
+    int N;
+    printf("podaj N: ");
+    scanf("%d",&N);
+
+    int arr_1[N],   arr_2[N],    arr_3[N];
+    int *a1 = arr_1, *a2 = arr_2, *a3 = arr_3;
+
+    for(int i = 0; i<N; i++)
+        {
+            arr_1[i] = i;
+            printf("%d\n",arr_1[i]);
+        }
+
+    kopiuj_1(arr_1,arr_2,N);  //indexy to wskaźniki wiec to nie ma sensu robi sie tak samo, bo indexy dzialaja tylko w 1 wymiarowaych tablicach lol, jakbym zrobil 2D arr to by sie cala narracja sypnela (cii),
+    kopiuj_2(a1,a3,N);        //wskaźniki
+
+
+    for(int j = 0; j<N; j++)
+        {   printf("+===%d===+\n",j+1);
+            printf("%d \n",arr_1[j]);
+            printf("%d \n",arr_2[j]);
+            printf("%d \n",arr_3[j]);
+        }
+
+    */
+    //10.6
+    /* nwm po co te dyrektywy preprocesora moze cos na wykladach bylo sensownego z nimi, zasadniczo useless w tym momencie (korzystania z pliku naglowkowego stdbool) xd
+    int N,prog;
+    printf("podaj N: ");
+    scanf("%d",&N);
+
+    int arr_1[N];
+    int *a1 = arr_1;
+
+    for(int i = 0; i<N; i++)
+        {
+            printf("\nPodaj %d wynik: ",i);
+            scanf("%d",&arr_1[i]);
+        }
+    printf("\nPodaj wynik od ktorego (<=) studenci zaliczali egzamin");
+    scanf("%d",&prog);
+
+    if(czy_zdali(arr_1,N,prog))
+        printf("yes");
+    else
+        printf("no");
+    */
 
     return 0;
 }
