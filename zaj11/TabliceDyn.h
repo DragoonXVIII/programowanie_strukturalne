@@ -13,6 +13,8 @@ void delete_tab(float *);
 
 void print_tab(float *, int, int);
 
+void print_tab_d(int *, int, int);
+
 //macro declaration
 //#define ADD(a,b) a + b
 

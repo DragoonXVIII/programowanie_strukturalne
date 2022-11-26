@@ -31,8 +31,11 @@ int main()
     delete_tab(tab);
     delete_tab(tab_2);
     */
-
-
+    int tabS[100];
+    int *tabSp = tabS;
+    losuj(tabSp,100,0,100);
+    printf("\nxD\n");
+    print_tab_d(tabSp,1,100);
 
     return 0;
 }

@@ -33,3 +33,20 @@
 	<time.h>
 	"TabliceDyn.h"
 
+1669391278 source:c:\edu-projects\c\programowanie_strukturalne\zaj11\tablicedyn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"TabliceDyn.h"
+
+1669393512 c:\edu-projects\c\programowanie_strukturalne\zaj11\tablicedyn.h
+
+1669393624 source:c:\edu-projects\c\programowanie_strukturalne\zaj11\main.c
+	<stdlib.h>
+	<stdio.h>
+	<locale.h>
+	<math.h>
+	<stdbool.h>
+	<float.h>
+	"TabliceDyn.h"
+

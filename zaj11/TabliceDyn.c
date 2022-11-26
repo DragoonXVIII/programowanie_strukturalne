@@ -14,10 +14,10 @@ void losuj(int *tab, int n, int a, int b)
 
     for(int i = 0; i<n; i++)
     {
-    //rand()%a+b;
-    *(tab+n) = rand()%a+b;
-    }
+    *(tab+n) = rand()%b;
+    printf("%d, ",(tab+n));
 
+    }
     return;
 }
 
@@ -75,6 +75,20 @@ void print_tab(float *tab, int m, int n)
         for(int j = 0; j<m; j++)//kolumny
         {
             printf("%f, ",*(tab+j+i*m));
+        }
+        printf("\n");
+    }
+
+    return;
+}
+
+void print_tab_d(int *tab, int m, int n)
+{
+    for(int i = 0; i<n; i++) //wiersze
+    {
+        for(int j = 0; j<m; j++)//kolumny
+        {
+            printf("%d, ",*(tab+j+i*m));
         }
         printf("\n");
     }
