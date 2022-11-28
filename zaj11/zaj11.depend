@@ -16,7 +16,7 @@
 	<time.h>
 	"TabliceDyn.h"
 
-1669335633 source:e:\workspace\c\programowanie_strukturalne\zaj11\main.c
+1669634677 source:e:\workspace\c\programowanie_strukturalne\zaj11\main.c
 	<stdlib.h>
 	<stdio.h>
 	<locale.h>
@@ -25,9 +25,9 @@
 	<float.h>
 	"TabliceDyn.h"
 
-1669335717 e:\workspace\c\programowanie_strukturalne\zaj11\tablicedyn.h
+1669594211 e:\workspace\c\programowanie_strukturalne\zaj11\tablicedyn.h
 
-1669335633 source:e:\workspace\c\programowanie_strukturalne\zaj11\tablicedyn.c
+1669634677 source:e:\workspace\c\programowanie_strukturalne\zaj11\tablicedyn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

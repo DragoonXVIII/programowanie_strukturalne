@@ -10,6 +10,8 @@
 #include "TabliceDyn.h"
 
 
+int x,y,z,p,r;
+
 
 int main()
 {
@@ -31,11 +33,42 @@ int main()
     delete_tab(tab);
     delete_tab(tab_2);
     */
+
+    //11.5
+    /*
     int tabS[100];
     int *tabSp = tabS;
-    losuj(tabSp,100,0,100);
-    printf("\nxD\n");
+    int *tab_in_range_ptr;
+    printf("podaj dolnma granice: ");
+    scanf(" %d",&x);
+    printf("podaj gorna granice: ");
+    scanf(" %d",&y);
+
+    losuj(tabSp,100,100,x,y); //wsk_tab, dlugosc_tab, limit_rand, dol_gra, gor_gra;
+    //printf("\nxD\n");
     print_tab_d(tabSp,1,100);
+    printf("\n+=====================================+\n");
+    *tab_in_range_ptr = chosen_tab(tabSp,100,x,y);
+    print_tab_d(*tab_in_range_ptr,1,z);//chosen_tab(tabSp,100,x,y)
+    */
+
+    //11.6
+    int n, m;
+    printf("Podaj n: ");
+    scanf("%d",&n);
+
+    printf("Podaj m: ");
+    scanf("%d",&m);
+
+    float *tab = new_tab_2D_f(n, m);
+
+    print_tab(tab, n, m);
+
+    printf("EOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOE");
+
+    f1(tab,1,p);
+
+    delete_tab(tab);
 
     return 0;
 }
