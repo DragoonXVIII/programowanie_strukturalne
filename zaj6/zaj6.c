@@ -8,7 +8,7 @@
 
 void srednia_while()
 {
-    float srednia=0.0;
+    float srednia = 0.0;
 
     int n,pom,pom2;
 
@@ -35,7 +35,7 @@ void srednia_while()
 
 void srednia_do_while()
 {
-    float srednia=0.0;
+    float srednia = 0.0;
 
     int n,pom,pom2;
     printf("podaj n:\n");
@@ -47,7 +47,7 @@ void srednia_do_while()
 
     do
     {
-        n=0;
+        n = 0;
         printf("podaj kolejna liczbe");
         scanf("%d",&n);
         srednia+=n;
@@ -75,7 +75,7 @@ void srednia_parz_nieparz()
             pom = false;
         else
         {
-            if((int)pom1%2==0)
+            if((int)pom1%2==0) //castowanie(rzutowanie) zmienniej pom1 typu float do int, tylko na potrzeby tego warunku
             {
                 ppom+=pom1;
                 sredp++;
@@ -130,7 +130,7 @@ void ile_litery_x_oraz_ile_cyfr()
 void maks()
 {
     bool pom = true;
-    float pom1, maxpom = FLT_MIN;
+    float pom1, maxpom = FLT_MIN; //FLT_MIN to wartosc predefiniowana z pliku naglowkowego biblioteki standardowej float.h
 
     printf("Podawaj liczby, znakiem koñcz¹cym bêdzie: \"-1\".\n");
 
@@ -159,20 +159,24 @@ int main()
 {
 
     setlocale(LC_ALL,"");
-
+    /*
     srednia_while();
-    //???? dziwnie dziala jakby zaporzyalo wartosc z innych zmiennych
+
     srednia_do_while();
+    */
 
     /*
     srednia_parz_nieparz();
     */
+
     /*
     ile_litery_x_oraz_ile_cyfr();
     */
+
     /*
     maks();
     */
+
     //6.6 zrobione wczesniej na przykladzie 4(?)/5(?) zadania xD
 
 

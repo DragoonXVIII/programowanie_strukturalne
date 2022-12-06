@@ -6,7 +6,9 @@
 #define STUDENT "student"
 #define SREDNIA 4.5
 
-void dane_studenta()
+//bledy w tekscie nie maja znaczenia jak cos, kwestia ze zle kodowanie raz ustawilem, nie chce mi sie poprawiac
+
+void dane_studenta() //fukncja typu void - nie zwraca argumentu,
 {
     char imie[20];
     char nazwisko[20];
@@ -25,7 +27,7 @@ void dane_studenta()
     return;
 }
 
-void objetosc_i_pole_powierzchni()
+void objetosc_i_pole_powierzchni() // funcja void sluzaca za "menu" do wykorzystania pozostalych funkcji
 {
     int index;
     printf("Aby policzyÊ:\n - pole powierzchni szeúcianu / prostopad≥oúcianu wprowadü \"1\" \n - objÍtoúÊ szeúcianu / prostopad≥oúcianu wprowadü \"2\" \n - pole powierzchni walca wprowadü \"3\" \n - objÍtoúÊ walca wprowadü \"4\" \n oraz zatwierdü klikajπc ENTER\n");
@@ -127,7 +129,7 @@ void srednia_ary()//úrednia arytmetyczna
     scanf("%d",&x);
     scanf("%d",&y);
 
-    float srednia_arytmetyczna = ((float)x+(float)y)/2;
+    float srednia_arytmetyczna = ((float)x+(float)y)/2.0;
 
     printf("%f\n",srednia_arytmetyczna);
     return;
@@ -146,7 +148,7 @@ void srednia_geo()//úrednia geometryczna
     return;
 }
 
-void przeliczanie_wielkosci_fizycznych()
+void przeliczanie_wielkosci_fizycznych() // ponownie funcja void sluzaca za "menu" do wykorzystania pozostalych funkcji
 {
     int index;
     printf("Aby skorzystaÊ z funkcji przeliczajπcych:\n - z mil na kilometry, wprowadü \"1\" \n - z kilometrÛw na mile, wprowadü \"2\" \n - z koni mechanicznych [KM] na waty [W], wprowadü \"3\" \n - z kilometrÛw na godzinÍ [km/h] na metry na sekundÍ [m/s], wprowadü \"4\" \n - ze stopni Fahrenheita [oF] na stopnie Celsjusza [oC], wprowadü \"5\" \n oraz zatwierdü klikajπc ENTER\n");
@@ -271,6 +273,8 @@ void wiek_w_przyszlosci()//wiek za x miesiecy
 }
 
 
+
+//system("cls"); funkcja odpowiedzialna za czyszczenie zawartosci konsoli z wyswietlonych juz obiektow.
 
 int main()
 {

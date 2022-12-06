@@ -71,8 +71,8 @@ int main()
     scanf("%f",&x);
 
     printf("Wartosc dla podanych argumentow wynosi: %f\n",suma_szeregu(x,k)); //wymaga dopracowania (nie działa najlepiej XD)
-    printf("Wartosc dla podanych argumentow wynosi: %f\n",sumaszer(x,k));
-
+    printf("Wartosc dla podanych argumentow wynosi: %f\n",sumaszer(x,k));    //teoretycznie dziala ale wsm czy poprawnie, jak rozmawialem z A. Gregosiewiczem zapewniał mnie o matematycznej poprawnosci, ale czy implementacja jest git to no chmmm (nwm)
+                                                                            //btw Taylora to nie lubie jak cos, szczegolnie jego ciagu szeregu czy innego obiektyu matematycznego jak cos nie warto
     return 0;
 }
 
@@ -187,7 +187,7 @@ void czy_ciag_2()
     printf("jest XD");
 }
 
-float suma_szeregu(float kat, int n)
+float suma_szeregu(float kat, int n) //wymaga dopracowania XD (kiedyś sie zrobi) (23.11.12)
 {
     int silnia(int a)
     {
