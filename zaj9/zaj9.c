@@ -47,10 +47,10 @@ bool iloczyn_1_100(int *a)
 
     *a = 1;
 
-    for(int j=0;j<(sizeof(tab)/sizeof(tab[j]));j++)
+    for(int j=0;j<(sizeof(tab)/sizeof(tab[j]));j++) // sizeof(tab)/sizeof(tab[0] wielkosc calej tablicy w B / wielkosc jednego elementu w B = ilosc elementow
     {
         if(tab[j]>=0&&100>=tab[j])
-            *a*=tab[j];
+            *a *= tab[j];
     }
 
     printf("iloczyn: %d \n",*a);
@@ -86,12 +86,12 @@ void ile_0_ile_dod()
         scanf(" %s", liczba_s);
 
             //printf("%s",liczba_s);
-        strc = strcmp(liczba_s, cpom);
+        strc = strcmp(liczba_s, cpom); //strcpm to funkcja sprawdzajaca rownosc dwoch lancuchow znakowych
             //printf("%d",strc);
 
         if(strc == 0)
         {
-            printf("schluss\n");
+            //printf("schluss\n"); //debug
             printf("0: %d, dod: %d",licz0,licz_dod);
             return;
         }
@@ -153,8 +153,8 @@ int main()
     */
     //9.5
     //dekompozycja();
-    //9.6
-    ile_0_ile_dod();
+    //.9.6
+    //ile_0_ile_dod();
 
 
 

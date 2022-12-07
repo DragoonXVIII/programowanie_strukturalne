@@ -64,7 +64,7 @@ int main()
 
     print_tab(tab, n, m);
 
-    printf("EOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOE");
+    //printf("EOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOE");
 
     f1(tab,1,p);
 

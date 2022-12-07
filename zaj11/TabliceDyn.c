@@ -208,7 +208,7 @@ void f1(float *tab, int n, int m)
                 continue;
             if( *(tab+j+(i*m)) > 0.0 )
             {
-                printf("EBEBE %f EBEBE\n",(tab_p+pom_p));
+                //printf("debug %f debug\n",(tab_p+pom_p));
                 tab_p[pom_p] = *(tab+j+(i*m));
                 pom_p++;
 
